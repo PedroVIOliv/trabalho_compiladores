@@ -1,0 +1,21 @@
+app fibonacci
+var
+    integer n, i, a, b, temp;
+
+init
+    n := 10;
+    a := 0;
+    b := 1;
+    i := 0;
+
+    write({Sequência de Fibonacci até 10 números: });
+
+    repeat
+        write(a);
+        temp := a + b;
+        a := b;
+        b := temp;
+        i := i + 1;
+    until i = n;
+
+return

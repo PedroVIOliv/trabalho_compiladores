@@ -189,6 +189,9 @@ public class Lexer {
                     if (c == '}') {
                         lex = new Lexeme(TokenType.LITERAL, lex.getValue());
                         return lex;
+                    } else if (c == '\n') {
+                        printError("esperado '}' para fechar o literal");
+                        return null;
                     } else {
                         lex.setValue(lex.getValue() + c);
                     }
@@ -251,5 +254,9 @@ public class Lexer {
             }
 
         }
+    }
+
+    public TableSymbol getTableSymbol() {
+        return tableSymbol;
     }
 }

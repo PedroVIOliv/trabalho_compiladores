@@ -1,0 +1,24 @@
+app Calculadora
+var
+    integer a, b, soma, subtracao, multiplicacao;
+
+init
+    write({Digite o primeiro valor: });
+    read(a);
+    write({Digite o segundo valor: });
+    read(b);
+
+    soma := a + b;
+    subtracao := a - b;
+    multiplicacao := a * b;
+
+    write({A soma dos valores é: });
+    write(soma);
+
+    write({A subtração dos valores é: });
+    write(subtracao);
+
+    write({A multiplicação dos valores é: });
+    write(multiplicacao);
+
+return
