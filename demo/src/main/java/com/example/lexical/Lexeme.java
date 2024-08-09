@@ -1,4 +1,4 @@
-package com.example.lexer;
+package com.example.lexical;
 
 public class Lexeme {
     private TokenType type;
@@ -24,6 +24,7 @@ public class Lexeme {
     public String getValue() {
         return value;
     }
+
     @Override
     public String toString() {
         String valueToPrint = value.replace("\n", "\\n");

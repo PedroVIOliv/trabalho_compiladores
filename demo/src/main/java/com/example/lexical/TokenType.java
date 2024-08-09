@@ -1,4 +1,4 @@
-package com.example.lexer;
+package com.example.lexical;
 
 public enum TokenType {
     RELOP, // "=" | ">" | ">=" | "<" | "<=" | "!="

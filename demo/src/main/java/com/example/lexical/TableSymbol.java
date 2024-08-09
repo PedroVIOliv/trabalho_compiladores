@@ -1,4 +1,4 @@
-package com.example.lexer;
+package com.example.lexical;
 
 import java.util.HashMap;
 import java.util.Map;

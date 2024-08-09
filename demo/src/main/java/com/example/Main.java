@@ -5,8 +5,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
-import com.example.lexer.Lexeme;
-import com.example.lexer.Lexer;
+import com.example.lexical.Lexeme;
+import com.example.lexical.Lexer;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,12 +14,11 @@ public class Main {
         try {
             // Caminho do arquivo do programa
             int program_number = 1; // Número do programa padrão
-
-            // Ler o número do programa a partir da entrada do usuário
-            Scanner scanner = new Scanner(System.in);
-            System.out.print("Digite o número do programa (1-10): ");
-            program_number = scanner.nextInt();
-            scanner.close();
+            try ( // Ler o número do programa a partir da entrada do usuário
+                    Scanner scanner = new Scanner(System.in)) {
+                System.out.print("Digite o número do programa (1-10): ");
+                program_number = scanner.nextInt();
+            }
             // Validar o número do programa
             if (program_number < 1 || program_number > 10) {
                 System.out.println("Número de programa inválido.");
@@ -47,7 +46,7 @@ public class Main {
             System.out.println("\n--- TABELA DE SÍMBOLOS ---");
             System.out.println(lexer.getTableSymbol());
         } catch (IOException e) {
-            e.printStackTrace();
+            e.printStackTrace(System.err);
         }
 
     }

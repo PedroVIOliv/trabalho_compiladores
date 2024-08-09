@@ -1,7 +1,4 @@
-package com.example.lexer;
-
-import java.util.HashMap;
-import java.util.Map;
+package com.example.lexical;
 
 public class Lexer {
     private String input;
