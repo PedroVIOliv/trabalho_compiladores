@@ -15,7 +15,7 @@ public class TableSymbol {
         table.put("<=", TokenType.RELOP);
         table.put("!=", TokenType.RELOP);
         table.put("+", TokenType.ADDOP);
-        table.put("-", TokenType.ADDOP);
+        table.put("-", TokenType.SUBOP);
         table.put("||", TokenType.ADDOP);
         table.put("*", TokenType.MULOP);
         table.put("/", TokenType.MULOP);

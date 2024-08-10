@@ -1,0 +1,72 @@
+program ::= app identifier body
+
+body ::= opt-decl-list init stmt-list return
+
+opt-decl-list ::= var decl-list
+opt-decl-list ::= ''
+
+decl-list ::= decl decl-list'
+decl-list' ::= ";" decl decl-list'
+decl-list' ::= ''
+
+decl ::= type ident-list
+
+ident-list ::= identifier ident-list'
+ident-list' ::= "," identifier ident-list'
+ident-list' ::= ''
+
+type ::= integer
+type ::= real
+
+stmt-list ::= stmt stmt-list'
+stmt-list' ::= ";" stmt stmt-list'
+stmt-list' ::= ''
+
+stmt ::= assign-stmt
+stmt ::= if-stmt
+stmt ::= repeat-stmt
+stmt ::= read-stmt
+stmt ::= write-stmt
+
+assign-stmt ::= identifier ":=" simple-expr
+
+if-stmt ::= if condition then stmt-list if-stmt'
+if-stmt' ::= end
+if-stmt' ::= else stmt-list end
+
+repeat-stmt ::= repeat stmt-list stmt-suffix
+
+stmt-suffix ::= until condition
+
+read-stmt ::= read "(" identifier ")"
+
+write-stmt ::= write "(" writable ")"
+
+writable ::= simple-expr
+writable ::= literal
+
+condition ::= expression
+
+expression ::= simple-expr expression'
+expression' ::= relop simple-expr expression'
+expression' ::= ''
+
+simple-expr ::= term simple-expr'
+simple-expr' ::= addop_or_subop term simple-expr'
+simple-expr' ::= ''
+
+term ::= factor-a term'
+term' ::= mulop factor-a term'
+term' ::= ''
+
+factor-a ::= factor-a-prefix factor
+factor-a-prefix ::= "!"
+factor-a-prefix ::= subop
+factor-a-prefix ::= ''
+
+factor ::= identifier
+factor ::= constant
+factor ::= "(" expression ")"
+
+addop_or_subop ::= subop
+addop_or_subop ::= addop

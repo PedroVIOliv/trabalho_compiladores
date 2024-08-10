@@ -112,7 +112,7 @@ public class Lexer {
                         lex = new Lexeme(TokenType.ADDOP, "+");
                         return lex;
                     } else if (c == '-') {
-                        lex = new Lexeme(TokenType.ADDOP, "-");
+                        lex = new Lexeme(TokenType.SUBOP, "-");
                         return lex;
                     } else if (c == '*') {
                         lex = new Lexeme(TokenType.MULOP, "*");

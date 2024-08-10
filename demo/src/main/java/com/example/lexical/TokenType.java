@@ -2,7 +2,7 @@ package com.example.lexical;
 
 public enum TokenType {
     RELOP, // "=" | ">" | ">=" | "<" | "<=" | "!="
-    ADDOP, // "+" | "-" | "||"
+    ADDOP, // "+" | "||"
     MULOP, // "*" | "/" | "&&"
     CONSTANT, // integer_const | float_const
     INTEGER_CONST, // digit+
@@ -32,5 +32,6 @@ public enum TokenType {
     WRITE, // write
     EXCLAMATION, // !
     ASSIGNER, // :=
+    SUBOP, // -
 
 }

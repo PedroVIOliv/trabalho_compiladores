@@ -1,6 +1,6 @@
 app Calculadora
 var
-    integer a, b, soma, subtracao, multiplicacao;
+    integer a, b, soma, subtracao, multiplicacao
 
 init
     write({Digite o primeiro valor: });
@@ -19,6 +19,6 @@ init
     write(subtracao);
 
     write({A multiplicação dos valores é: });
-    write(multiplicacao);
+    write(multiplicacao)
 
 return

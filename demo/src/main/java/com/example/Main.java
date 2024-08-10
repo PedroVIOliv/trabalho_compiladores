@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 import com.example.lexical.Lexeme;
 import com.example.lexical.Lexer;
+import com.example.syntatic.Syntaxer;
 
 public class Main {
     public static void main(String[] args) {
@@ -31,20 +32,23 @@ public class Main {
             String programContent = new String(Files.readAllBytes(Paths.get(filePath)));
 
             // Passar o conteúdo lido para o lexer
-            Lexer lexer = new Lexer(programContent);
+            // Lexer lexer = new Lexer(programContent);
 
-            System.out.println("--- LEITURA DE TOKENS ---");
+            // System.out.println("--- LEITURA DE TOKENS ---");
 
-            while (true) {
-                Lexeme lexema = lexer.nextToken();
-                if (lexema == null) {
-                    break;
-                }
-                System.out.println(lexema);
+            // while (true) {
+            // Lexeme lexema = lexer.nextToken();
+            // if (lexema == null) {
+            // break;
+            // }
+            // System.out.println(lexema);
 
-            }
-            System.out.println("\n--- TABELA DE SÍMBOLOS ---");
-            System.out.println(lexer.getTableSymbol());
+            // }
+            // System.out.println("\n--- TABELA DE SÍMBOLOS ---");
+            // System.out.println(lexer.getTableSymbol());
+
+            Syntaxer syntaxer = new Syntaxer(programContent);
+            syntaxer.run();
         } catch (IOException e) {
             e.printStackTrace(System.err);
         }

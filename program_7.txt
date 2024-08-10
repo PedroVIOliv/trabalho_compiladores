@@ -1,6 +1,6 @@
 app fibonacci
 var
-    integer n, i, a, b, temp;
+    integer n, i, a, b, temp
 
 init
     n := 10;
