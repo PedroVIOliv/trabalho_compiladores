@@ -15,7 +15,7 @@ init
         temp := a + b;
         a := b;
         b := temp;
-        i := i + 1;
-    until i = n;
+        i := i + 1
+    until i = n
 
 return

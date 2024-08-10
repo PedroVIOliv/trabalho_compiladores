@@ -56,7 +56,7 @@ public class Lexer {
                         printError("esperado '}' para fechar o literal"); // erro
                         return null;
                     case 8:
-                        return new Lexeme(TokenType.INTEGER_CONST, lex.getValue());
+                        return new Lexeme(TokenType.CONSTANT, lex.getValue());
                     case 9:
                         TokenType type = tableSymbol.getSymbolType(lex.getValue());
                         if (type != null) {
@@ -67,7 +67,7 @@ public class Lexer {
                         }
                     case 10:
                     case 11:
-                        return new Lexeme(TokenType.FLOAT_CONST, lex.getValue());
+                        return new Lexeme(TokenType.CONSTANT, lex.getValue());
                     case 12:
                         printError("esperado '=' apos ':'"); // erro
                         return null;
@@ -200,7 +200,7 @@ public class Lexer {
                         state = 10; // float ainda sem o digito apos o ponto
                         lex.setValue(lex.getValue() + c);
                     } else {
-                        lex = new Lexeme(TokenType.INTEGER_CONST, lex.getValue());
+                        lex = new Lexeme(TokenType.CONSTANT, lex.getValue());
                         position--; // devolve o caractere lido para ser lido novamente
                         return lex;
                     }
@@ -233,7 +233,7 @@ public class Lexer {
                     if (Character.isDigit(c)) {
                         lex.setValue(lex.getValue() + c);
                     } else {
-                        lex = new Lexeme(TokenType.FLOAT_CONST, lex.getValue());
+                        lex = new Lexeme(TokenType.CONSTANT, lex.getValue());
                         position--; // devolve o caractere lido para ser lido novamente
                         return lex;
                     }
